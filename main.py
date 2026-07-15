@@ -1,5 +1,5 @@
 import pygame
-from constants import PLAYER_RADIUS, LINE_WIDTH, SCREEN_WIDTH, SCREEN_HEIGHT
+from constants import PLAYER_RADIUS, LINE_WIDTH, SCREEN_WIDTH, SCREEN_HEIGHT, PLAYER_TURN_SPEED
 from logger import log_state
 from player import Player
 
@@ -20,6 +20,7 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
+        player.update(dt)
         screen.fill("black")
         player.draw(screen)
         pygame.display.flip()
